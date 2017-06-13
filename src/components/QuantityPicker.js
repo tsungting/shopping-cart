@@ -17,7 +17,7 @@ export class QuantityPicker extends Component {
     return (
       <div>
         <span>Quantity</span>
-        <input type="text" onChange={(event)=>{this.setState({quantity: event.target.value})}}></input>
+        <input type="number" onChange={(event)=>{this.setState({quantity: event.target.value})}}></input>
         <button onClick={this.handleConfirmClicked} type="button">Confirm</button>
       </div>
     );

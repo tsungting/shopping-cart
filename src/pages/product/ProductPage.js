@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ProductCard } from '../../components/ProductCard';
+import ProductCard from '../../components/ProductCard';
 
 const mapStateToProps = (state) => {
   return state.product;
