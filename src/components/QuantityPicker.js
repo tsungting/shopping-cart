@@ -4,12 +4,13 @@ export class QuantityPicker extends Component {
 
   constructor(){
     super();
-    this.state = {};
+    this.state = {quantity: ''};
   }
 
   handleConfirmClicked = () => {
     if (this.state.quantity){
-      this.props.handleQuantityUpdated(this.state.quantity);
+      this.props.handleQuantityUpdated(parseInt(this.state.quantity, 10));
+      this.setState({quantity: ''});
     }
   }
 
@@ -17,7 +18,7 @@ export class QuantityPicker extends Component {
     return (
       <div>
         <span>Quantity</span>
-        <input type="number" onChange={(event)=>{this.setState({quantity: event.target.value})}}></input>
+        <input type="number" value={this.state.quantity} onChange={(event)=>{this.setState({quantity: event.target.value})}}></input>
         <button onClick={this.handleConfirmClicked} type="button">Confirm</button>
       </div>
     );

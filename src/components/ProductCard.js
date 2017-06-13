@@ -17,7 +17,7 @@ function ProductCard({product, handleQuantityUpdated}) {
             </div>
             <div className="p2">
                 <span>Cost : ${product.cost}</span>
-                <QuantityPicker handleQuantityUpdated={handleQuantityUpdated(product.id)}/>
+                <QuantityPicker handleQuantityUpdated={handleQuantityUpdated(product)}/>
             </div>
         </div>
     );
@@ -25,7 +25,7 @@ function ProductCard({product, handleQuantityUpdated}) {
 
 const mapDispatchToProp = (dispatch) => {
     return {
-        handleQuantityUpdated: (productId) => (quantity) => dispatch(getProductSelectedAction(productId, quantity))
+        handleQuantityUpdated: (product) => (quantity) => dispatch(getProductSelectedAction(product, quantity))
     }
 }
 
