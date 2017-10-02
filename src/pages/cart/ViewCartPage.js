@@ -7,11 +7,21 @@ const mapStateToProps = (state) => {
     return {cartItems: state.cart.cartItems};
 }
 
+const getCartItem = (item) => {
+  return (
+    <div className="border m4" key={item.product.id}>
+      <div>{item.product.label}</div>
+      <div>{item.product.description}</div>
+      <div>Quantity: {item.quantity}</div>
+    </div>
+  );
+}
+
 const ViewCartPage = ({cartItems}) => {
     return (
       <div>{cartItems.map((item) => {
-        return <span key={item.product.id}>{item.product.label}</span>;
-        })}</div>
+        return getCartItem(item);
+      })}</div>
     );
 }
 
